@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+  <title>Bouncing Ball with Box</title>
+</head>
+<body>
+  <canvas id="bouncingBallCanvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById('bouncingBallCanvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const ball = {
+      x: canvas.width / 2,
+      y: canvas.height / 2,
+      radius: 20,
+      color: 'blue',
+      velocityX: 2,
+      velocityY: 2,
+    };
+
+    const box = {
+      x: 100,
+      y: 100,
+      width: 400,
+      height: 200,
+      color: 'rgba(0, 0, 0, 
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+  <title>Rainbow Bouncing Ball</title>
+</head>
+<body>
+  <canvas id="bouncingBallCanvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById('bouncingBallCanvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const ball = {
+      x: canvas.width / 2,
+      y: canvas.height / 2,
+      radius: 20,
+      velocityX: 2,
+      velocityY: 2,
+    };
+
+    function drawBall() {
+      const gradient = ctx.createRadialGradient(ball.x, ball.y, 0, ball.x, ball.y, ball.radius);
+      gradient.addColorStop(0, 'red');
+      gradient.addColorStop(0.15, 'orange');
+      gradient.addColorStop(0.3, 'yellow');
+      gradient.addColorStop(0.45, 'green');
+      gradient.addColorStop(0.6, 'blue');
+      gradient.addColorStop(0.75, 'indigo');
+      gradient.addColorStop(1, 'violet');
+
+      ctx.beginPath();
+      ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+      ctx.fillStyle = gradient;
+      ctx.fill();
+      ctx.closePath();
+    }
+
+    function update() {
+      ball.x += ball.velocityX;
+      ball.y += ball.velocityY;
+
+      // Bounce off the walls
+      if (ball.x + ball.radius > canvas.width || ball.x - ball.radius < 0) {
+        ball.velocityX = -ball.velocityX;
+      }
+
+      if (ball.y + ball.radius > canvas.height || ball.y - ball.radius < 0) {
+        ball.velocityY = -ball.velocityY;
+
+    function animate() 
+      ctx.clearRect(0, 0, canvas.width, canvas.height):
+
+      drawBall();
+      update();
+
+      requestAnimationFrame(animate);
+    animate();
+  </script>
+</body>
+</html>
